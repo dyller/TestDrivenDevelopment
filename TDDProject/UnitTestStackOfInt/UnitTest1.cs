@@ -30,16 +30,18 @@ namespace UnitTestStackOfInt
             double expResult=2 ;
             SOI.Push(expResult);
             SOI.Push(3);
-            SOI.Pop();
-             double result = SOI.StackInt.Peek();
+            double expResult3 =  SOI.Pop();
+            double result = SOI.StackInt.Peek();
             Assert.AreEqual(expResult, result);
+            Assert.AreEqual(expResult3, 3);
 
             double expResult2 = 3;
             SOI.Push(expResult2);
             SOI.Push(2);
-            SOI.Pop();
+           double expResult4= SOI.Pop();
             double result2 = SOI.StackInt.Peek();
             Assert.AreEqual(expResult2, result2);
+            Assert.AreEqual(expResult4, 2);
         }
 
         [TestMethod]

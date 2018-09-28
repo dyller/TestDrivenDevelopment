@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -66,9 +66,10 @@ namespace TDDProject
             StackInt.Push(result);
         }
 
-        public void Pop()
+        public double Pop()
         {
-            StackInt.Pop();
+           
+            return  StackInt.Pop();
            
         }
 

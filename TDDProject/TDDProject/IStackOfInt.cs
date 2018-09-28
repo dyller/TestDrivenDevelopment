@@ -9,7 +9,7 @@ namespace TDDProject
         //insert number in top of the stack
         void Push(double x);
         //delete first number in stack
-        void Pop();
+        double Pop();
         //return first number in stack
         double Top ();
         // clear all numbers in stack
