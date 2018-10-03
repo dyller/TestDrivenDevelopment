@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using System.Linq;
 using TDDProject;
 
@@ -21,6 +22,23 @@ namespace UnitTestStackOfInt
             double result2 = SOI.StackInt.Peek();
             Assert.AreEqual(expResult2, result2);
         }
+        [TestMethod]
+        public void TestAddTwoException()
+        {
+            StackOfInt SOI = new StackOfInt();
+            SOI.Clear();
+            SOI.Push(2);
+            try
+            {
+                SOI.AddTop2();
+                Assert.Fail();
+            }
+            catch (System.Exception)
+            {
+                
+            }
+
+        }
 
         [TestMethod]
         public void Testpop()
@@ -34,7 +52,7 @@ namespace UnitTestStackOfInt
             double result = SOI.StackInt.Peek();
             Assert.AreEqual(expResult, result);
             Assert.AreEqual(expResult3, 3);
-
+            
             double expResult2 = 3;
             SOI.Push(expResult2);
             SOI.Push(2);
@@ -42,6 +60,7 @@ namespace UnitTestStackOfInt
             double result2 = SOI.StackInt.Peek();
             Assert.AreEqual(expResult2, result2);
             Assert.AreEqual(expResult4, 2);
+
         }
 
         [TestMethod]
@@ -109,6 +128,25 @@ namespace UnitTestStackOfInt
             Assert.AreEqual(21 - 11, SOI.StackInt.Peek());
 
         }
+
+        [TestMethod]
+        public void TestsubTop2Exception()
+        {
+            StackOfInt SOI = new StackOfInt();
+
+            SOI.Push(1);
+            try
+            {
+                SOI.SubTop2();
+                Assert.Fail();
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
         [TestMethod]
         public void TestMultiplyTop2()
         {
@@ -119,6 +157,24 @@ namespace UnitTestStackOfInt
             SOI.Push(21);
             SOI.Multiplytop2();
             Assert.AreEqual(21 * 11, SOI.StackInt.Peek());
+
+        }
+
+        [TestMethod]
+        public void TestMultiplyTop2Exception()
+        {
+            StackOfInt SOI = new StackOfInt();
+
+            SOI.Push(1);
+            try
+            {
+                SOI.Multiplytop2();
+                Assert.Fail();
+            }
+            catch (Exception)
+            {
+
+            }
 
         }
         [TestMethod]
@@ -133,7 +189,23 @@ namespace UnitTestStackOfInt
             Assert.AreEqual((double)21 /(double) 11, SOI.StackInt.Peek());
 
         }
+        [TestMethod]
+        public void TestDivsionTop2Exception()
+        {
+            StackOfInt SOI = new StackOfInt();
 
+            SOI.Push(1);
+            try
+            {
+                SOI.DivisionTop2();
+                Assert.Fail();
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
         [TestMethod]
         public void TestaddAll()
         {
@@ -156,6 +228,58 @@ namespace UnitTestStackOfInt
             SOI.Push(21);
             SOI.MultiAllNumbers();
             Assert.AreEqual(21 * 11 * 1, SOI.StackInt.Peek());
+
+        }
+        [TestMethod]
+        public void TestMultiplyAll1Number()
+        {
+            StackOfInt SOI = new StackOfInt();
+            SOI.Clear();
+            SOI.Push(1);
+            SOI.MultiAllNumbers();
+            Assert.AreEqual( 1, SOI.StackInt.Peek());
+
+        }
+        [TestMethod]
+        public void TestAddAllNumber1Number()
+        {
+            StackOfInt SOI = new StackOfInt();
+            SOI.Clear();
+            SOI.Push(1);
+            SOI.AddAll();
+            Assert.AreEqual(1, SOI.StackInt.Peek());
+
+        }
+        [TestMethod]
+        public void TestMultiplyAllIsempty()
+        {
+            StackOfInt SOI = new StackOfInt();
+            SOI.Clear();
+            try
+            {
+                SOI.MultiAllNumbers();
+                Assert.Fail();
+            }
+            catch(Exception)
+            {
+                
+            }
+
+        }
+        [TestMethod]
+        public void TestAddAllIsempty()
+        {
+            StackOfInt SOI = new StackOfInt();
+            SOI.Clear();
+            try
+            {
+                SOI.AddAll();
+                Assert.Fail();
+            }
+            catch(Exception)
+            {
+
+            }
 
         }
 
