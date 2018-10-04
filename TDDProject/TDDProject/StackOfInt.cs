@@ -92,7 +92,7 @@ namespace TDDProject
             }
             else
             {
-                throw new Exception();
+                throw new ArgumentException("Their need to be two number");
             }
         }
 

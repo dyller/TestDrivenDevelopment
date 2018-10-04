@@ -159,22 +159,16 @@ namespace UnitTestStackOfInt
             Assert.AreEqual(21 * 11, SOI.StackInt.Peek());
 
         }
-
+        [ExpectedException(typeof(ArgumentException), "Their need to be two numbers")]
         [TestMethod]
         public void TestMultiplyTop2Exception()
         {
             StackOfInt SOI = new StackOfInt();
 
             SOI.Push(1);
-            try
-            {
+           
                 SOI.Multiplytop2();
-                Assert.Fail();
-            }
-            catch (Exception)
-            {
-
-            }
+              
 
         }
         [TestMethod]
